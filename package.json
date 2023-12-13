@@ -1,0 +1,22 @@
+{
+  "name": "jsadv",
+  "version": "1.0.0",
+  "description": "This serves as the home for the Integrative Project of the Advanced JavaScript course.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emirevec/ed-js-advanced.git"
+  },
+  "author": "emirevec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emirevec/ed-js-advanced/issues"
+  },
+  "homepage": "https://github.com/emirevec/ed-js-advanced#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
+  }
+}
