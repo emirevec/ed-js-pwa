@@ -4,6 +4,7 @@
 - [Introduction](#introduction)
 - [Project Description](#project-description)
 - [Workflow](#workflow)
+- [Node.js] (#Node.js-as-runtime-environment)
 - [Javascript Libraries](#javascript-libraries-used)
 - [Tailwind CSS for Styling](#Tailwind-CSS-for-Styling)
 
@@ -18,6 +19,10 @@ The creation of a dynamic JavaScript ecommerce app with PWA features, including 
 ## Workflow
 
 We follow a development workflow inspired by GitFlow, which provides a structured approach to branch management. While we use GitFlow as a guideline, we also maintain the flexibility to adapt the workflow as needed to fit the requirements of our project.
+
+## Node.js as runtime environment
+
+We aim to leverage its strengths to enhance the overall performance, development speed, and scalability of our app. 
 
 ## Javascript Libraries Used
 
