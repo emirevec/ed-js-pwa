@@ -4,7 +4,7 @@
 - [Introduction](#introduction)
 - [Project Description](#project-description)
 - [Workflow](#workflow)
-- [Node.js] (#Node.js-as-runtime-environment)
+- [Node.js](#Node.js-as-runtime-environment)
 - [Javascript Libraries](#javascript-libraries-used)
 - [Tailwind CSS for Styling](#Tailwind-CSS-for-Styling)
 
