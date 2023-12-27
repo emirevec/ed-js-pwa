@@ -4,6 +4,8 @@ function renderPage (url) {
     xhr.send();
     xhr.addEventListener('load', () => {
         const form = Handlebars.compile(xhr.response);
-        $("#app").append(form);
+        $("#form").append(form);
     })
 }
+
+
