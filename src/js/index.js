@@ -1,4 +1,4 @@
-function renderPage (url, onLoad = null) {
+function renderPage (url) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.send();
@@ -7,11 +7,3 @@ function renderPage (url, onLoad = null) {
         $("#app").append(form);
     })
 }
-
-
-/* import formview from "../views/form.hbs"
-
-const form = Handlebars.compile(formview);
-
-$("#app").append(form);
- */
