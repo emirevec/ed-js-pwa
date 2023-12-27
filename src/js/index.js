@@ -8,4 +8,14 @@ function renderPage (url) {
     })
 }
 
+function renderProducts (url) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+    xhr.addEventListener('load', () => {
+        const products = Handlebars.compile(xhr.response);
+        $("#products").append(products);
+    } )
+}
+
 
