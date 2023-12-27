@@ -1,17 +1,21 @@
-function renderPage (url, onLoad = null) {
+function renderPage (url) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.send();
     xhr.addEventListener('load', () => {
         const form = Handlebars.compile(xhr.response);
-        $("#app").append(form);
+        $("#form").append(form);
     })
 }
 
+function renderProducts (url) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+    xhr.addEventListener('load', () => {
+        const products = Handlebars.compile(xhr.response);
+        $("#products").append(products);
+    } )
+}
 
-/* import formview from "../views/form.hbs"
 
-const form = Handlebars.compile(formview);
-
-$("#app").append(form);
- */
