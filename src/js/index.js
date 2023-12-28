@@ -7,3 +7,8 @@ function render (url, id) {
         $("#" + id).append(template);
     })
 }
+
+$(function(){
+    render('../src/views/form.hbs', "form");
+    render('../src/views/products.hbs', "products");
+});
