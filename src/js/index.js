@@ -17,7 +17,7 @@ function getData () {
     xhr.send();
     xhr.addEventListener('load', () => {
         data = JSON.parse(xhr.response);
-        render('../src/views/products.hbs', "products");
+        render('../src/views/app.hbs', "app");
     });
 };
 
@@ -34,17 +34,17 @@ $("#search_order").on("change", (e) => {
             )
             break;
     };
-    render('../src/views/products.hbs', "products");
+    render('../src/views/app.hbs', "app");
 });
 
 $("#search_submit").on("click", (e) => {
     e.preventDefault();
     const searchName = $("#search_name").val().toLocaleLowerCase();
     data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
-    render('../src/views/products.hbs', "products");
+    render('../src/views/app.hbs', "app");
 });
 
 $(function(){
-    render('../src/views/products.hbs', "products");
+    render('../src/views/app.hbs', "app");
     getData();
 });
