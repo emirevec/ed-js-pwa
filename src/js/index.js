@@ -101,9 +101,8 @@ $("#search_order").on("change", (e) => {
 $("#search_submit").on("click", (e) => {
     e.preventDefault();
     const searchName = $("#search_name").val().toLocaleLowerCase();
-    data.products = data.products.nombre.filter((n) => n === searchName);
-    console.log(searchName);
-    console.log(data.products);
+    data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
+    render('../src/views/products.hbs', "products");
 });
 
 $(function(){
