@@ -1,13 +1,13 @@
 let data = [];
 
-function renderPage(url, id) {
+function renderPage(url) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.send();
     xhr.addEventListener('load', () => {
         const template = Handlebars.compile(xhr.response);
-        $("#" + id).empty();
-        $("#" + id).append(template({ data }));
+        $("#app").empty();
+        $("#app").append(template({ data }));
         $("#search_order").on("change", (e) => {
             switch (e.target.value) {
                 case 'mayorPrecio':
@@ -21,13 +21,13 @@ function renderPage(url, id) {
                     )
                     break;
             };
-            renderPage('../src/views/app.hbs', "app");
+            renderPage('../src/views/app.hbs');
         });
         $("#search_submit").on("click", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val().toLocaleLowerCase();
             data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
-            renderPage('../src/views/app.hbs', "app");
+            renderPage('../src/views/app.hbs');
         });
     });
 };
@@ -38,11 +38,11 @@ function getData() {
     xhr.send();
     xhr.addEventListener('load', () => {
         data = JSON.parse(xhr.response);
-        renderPage('../src/views/app.hbs', "app");
+        renderPage('../src/views/app.hbs');
     });
 };
 
 $(function () {
-    renderPage('../src/views/app.hbs', "app");
+    renderPage('../src/views/app.hbs');
     getData();
 });
