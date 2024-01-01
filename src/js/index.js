@@ -1,6 +1,6 @@
 let data = [];
 
-function render(url, id) {
+function renderPage(url, id) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.send();
@@ -21,13 +21,13 @@ function render(url, id) {
                     )
                     break;
             };
-            render('../src/views/app.hbs', "app");
+            renderPage('../src/views/app.hbs', "app");
         });
         $("#search_submit").on("click", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val().toLocaleLowerCase();
             data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
-            render('../src/views/app.hbs', "app");
+            renderPage('../src/views/app.hbs', "app");
         });
     });
 };
@@ -38,12 +38,11 @@ function getData() {
     xhr.send();
     xhr.addEventListener('load', () => {
         data = JSON.parse(xhr.response);
-        render('../src/views/app.hbs', "app");
+        renderPage('../src/views/app.hbs', "app");
     });
 };
 
-
 $(function () {
-    render('../src/views/app.hbs', "app");
+    renderPage('../src/views/app.hbs', "app");
     getData();
 });
