@@ -8,8 +8,16 @@ function renderApp() {
         const template = Handlebars.compile(xhr.response);
         $("#app").empty();
         $("#app").append(template({ data }));
-        $("#search_order").on("change", (e) => {
-            switch (e.target.value) {
+        $("#search_submit").on("click", (e) => {
+            e.preventDefault();
+            const searchName = $("#search_name").val().toLocaleLowerCase();
+            const order = $("#search_order").val();
+
+            if (searchName) {
+                data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
+            }
+
+            switch (order) {
                 case 'mayorPrecio':
                     data = data.sort((a, b) =>
                         Number(a.precio) < Number(b.precio) ? 1 : -1
@@ -21,12 +29,7 @@ function renderApp() {
                     )
                     break;
             };
-            renderApp();
-        });
-        $("#search_submit").on("click", (e) => {
-            e.preventDefault();
-            const searchName = $("#search_name").val().toLocaleLowerCase();
-            data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
+            
             renderApp();
         });
     });
