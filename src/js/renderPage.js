@@ -1,6 +1,6 @@
-function renderPage(data, callback){
+function renderPage(url, data, callback){
     $.ajax({
-        url: '../src/views/app.hbs',
+        url: url,
         method: 'GET',
         dataType: 'html'
         })

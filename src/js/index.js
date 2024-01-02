@@ -95,7 +95,7 @@ function renderApp() {
         };
     };
 
-    renderPage(data, () => {
+    renderPage('../src/views/app.hbs', data, () => {
         $("#search").on("submit", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val();
