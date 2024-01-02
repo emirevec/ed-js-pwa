@@ -1,3 +1,5 @@
+import renderPage from "./renderPage.js";
+
 let data = [
     {
         "nombre": "Unbranded Cotton Shoes",
@@ -71,7 +73,7 @@ let data = [
     }
 ];
 
-function renderApp() {
+/* function renderApp() {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', '../src/views/app.hbs');
     xhr.send();
@@ -108,8 +110,8 @@ function renderApp() {
         });
     });
 };
-//const params = new URLSearchParams(location);
+ */
 
 $(function () {
-    renderApp();
+    renderPage(data);
 });
