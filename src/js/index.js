@@ -29,7 +29,7 @@ function renderApp() {
                     )
                     break;
             };
-            
+
             renderApp();
         });
     });
@@ -45,7 +45,13 @@ function getData() {
     });
 };
 
+function history(){
+    const params = new URLSearchParams(location.search);
+    console.log(params);
+};
+
 $(function () {
     renderApp();
     getData();
+    history();
 });
