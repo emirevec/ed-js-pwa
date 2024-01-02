@@ -45,13 +45,13 @@ function getData() {
     });
 };
 
-function history(){
-    const params = new URLSearchParams(location.search);
+function getParams(){
+    const params = new URLSearchParams(location);
     console.log(params);
 };
 
 $(function () {
     renderApp();
     getData();
-    history();
+    getParams();
 });
