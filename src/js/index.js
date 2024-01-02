@@ -8,7 +8,7 @@ function renderApp() {
         const template = Handlebars.compile(xhr.response);
         $("#app").empty();
         $("#app").append(template({ data }));
-        $("#search_submit").on("click", (e) => {
+        $("#search").on("submit", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val().toLocaleLowerCase();
             const order = $("#search_order").val();
