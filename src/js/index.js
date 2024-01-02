@@ -73,45 +73,39 @@ let data = [
     }
 ];
 
-/* function renderApp() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', '../src/views/app.hbs');
-    xhr.send();
-    xhr.addEventListener('load', () => {
-        const template = Handlebars.compile(xhr.response);
-        $("#app").empty();
-        $("#app").append(template({ data }));
-        
-        
+function renderApp() {
+    const params = new URLSearchParams(location.search);
+
+    if (params.get('q')) {
+        data = data.filter((item) => item.nombre.toLocaleLowerCase().includes(params.get('q').toLocaleLowerCase()));
+    };
+
+    if (params.get('s')) {
+        switch (params.get('s')) {
+            case 'mayorPrecio':
+                data = data.sort((a, b) =>
+                    Number(a.precio) < Number(b.precio) ? 1 : -1
+                )
+                break;
+            case 'menorPrecio':
+                data = data.sort((a, b) =>
+                    Number(a.precio) > Number(b.precio) ? 1 : -1
+                )
+                break;
+        };
+    };
+
+    renderPage(data, () => {
         $("#search").on("submit", (e) => {
             e.preventDefault();
-                        
-            const searchName = $("#search_name").val().toLocaleLowerCase();
-            const order = $("#search_order").val();
-
-            if (searchName) {
-                data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
-            }
-            
-            switch (order) {
-                case 'mayorPrecio':
-                    data = data.sort((a, b) =>
-                    Number(a.precio) < Number(b.precio) ? 1 : -1
-                    )
-                    break;
-                    case 'menorPrecio':
-                        data = data.sort((a, b) =>
-                        Number(a.precio) > Number(b.precio) ? 1 : -1
-                        )
-                        break;
-                    };
-
+            const searchName = $("#search_name").val();
+            const searchOrder = $("#search_order").val();
+            history.pushState({}, '', `/?q=${searchName}&s=${searchOrder}`);
             renderApp();
         });
     });
 };
- */
 
 $(function () {
-    renderPage(data);
+    renderApp();
 });
