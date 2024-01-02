@@ -1,8 +1,8 @@
 let data = [];
 
-function renderPage(url) {
+function renderApp() {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
+    xhr.open('GET', '../src/views/app.hbs');
     xhr.send();
     xhr.addEventListener('load', () => {
         const template = Handlebars.compile(xhr.response);
@@ -21,13 +21,13 @@ function renderPage(url) {
                     )
                     break;
             };
-            renderPage('../src/views/app.hbs');
+            renderApp();
         });
         $("#search_submit").on("click", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val().toLocaleLowerCase();
             data = data.filter((item) => item.nombre.toLocaleLowerCase() == searchName);
-            renderPage('../src/views/app.hbs');
+            renderApp();
         });
     });
 };
@@ -38,11 +38,11 @@ function getData() {
     xhr.send();
     xhr.addEventListener('load', () => {
         data = JSON.parse(xhr.response);
-        renderPage('../src/views/app.hbs');
+        renderApp();
     });
 };
 
 $(function () {
-    renderPage('../src/views/app.hbs');
+    renderApp();
     getData();
 });
