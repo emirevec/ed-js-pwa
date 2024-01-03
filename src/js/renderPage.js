@@ -10,8 +10,8 @@ function renderPage(url, data, callback){
             $("#app").append(template({ data }));
             callback();
     });
-}
+};
 
-export default renderPage
+export default renderPage;
 
 
