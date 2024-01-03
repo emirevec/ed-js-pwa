@@ -1,4 +1,5 @@
 import renderApp from "./renderApp.js";
+import navigate from "./navigate.js";
 
 let data = [
     {
@@ -72,6 +73,14 @@ let data = [
         "id": "14"
     }
 ];
+
+const routes = {
+    '/': home,
+    '/article': article,
+    '/cart': cart, 
+};
+
+$(window).on('popstate', navigate(location.pathname));
 
 $(function () {
     renderApp(data);
