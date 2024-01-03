@@ -17,6 +17,7 @@
     <script src="../src/js/renderPage.js"></script>
     <script src="../src/js/renderApp.js"></script>
     <script src="../src/js/navigate.js"></script>
+    <script src="../src/js/articlePage.js"></script>
     <script>
         let data = [
             {
@@ -93,14 +94,13 @@
 
         const routes = {
             '/': renderApp,
-            //'/article': article,
+            '/article': articlePage,
             //'/cart': cart, 
         };
 
         $(window).on('popstate', () => {
             navigate(location.pathname)
-        }
-        );
+        });
 
         $(function () {
             renderApp();
