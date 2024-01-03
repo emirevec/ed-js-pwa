@@ -1,28 +1,29 @@
 import renderPage from "./renderPage.js";
 
-function renderApp(data) {
+function renderApp() {
     const params = new URLSearchParams(location.search);
+    let dat = data;
 
     if (params.get('q')) {
-        data = data.filter((item) => item.nombre.toLocaleLowerCase().includes(params.get('q').toLocaleLowerCase()));
+        dat = dat.filter((item) => item.nombre.toLocaleLowerCase().includes(params.get('q').toLocaleLowerCase()));
     };
 
     if (params.get('s')) {
         switch (params.get('s')) {
             case 'mayorPrecio':
-                data = data.sort((a, b) =>
+                dat = dat.sort((a, b) =>
                     Number(a.precio) < Number(b.precio) ? 1 : -1
                 )
                 break;
             case 'menorPrecio':
-                data = data.sort((a, b) =>
+                dat = dat.sort((a, b) =>
                     Number(a.precio) > Number(b.precio) ? 1 : -1
                 )
                 break;
         };
     };
 
-    renderPage('../src/views/app.hbs', data, () => {
+    renderPage('../src/views/app.hbs', dat, () => {
         $("#search").on("submit", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val();
