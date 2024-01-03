@@ -12,6 +12,4 @@ function renderPage(url, data, callback){
     });
 };
 
-export default renderPage;
-
 

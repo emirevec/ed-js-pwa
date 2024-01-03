@@ -1,5 +1,3 @@
-import renderPage from "./renderPage.js";
-
 function renderApp() {
     const params = new URLSearchParams(location.search);
     let dat = data;
@@ -28,10 +26,7 @@ function renderApp() {
             e.preventDefault();
             const searchName = $("#search_name").val();
             const searchOrder = $("#search_order").val();
-            history.pushState({}, '', `/?q=${searchName}&s=${searchOrder}`);
-            renderApp();
+            navigate(`/?q=${searchName}&s=${searchOrder}`);
         });
     });
 };
-
-export default renderApp;
