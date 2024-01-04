@@ -24,7 +24,6 @@ async function renderApp() {
     await renderPage('../src/views/app.hbs', dat, () => {
         $('.article-list .article').each((_, item) => {
             $(item).on('click', () => {
-                console.log("Click in article n:" + item.dataset.id);
                 navigate(`/article?id=${item.dataset.id}`);
             });
         });
