@@ -8,6 +8,5 @@ async function articlePage (){
 
     const data = data.find((item) => item.id == search.get('id'));
 
-    renderPage('../views/article.hbs', data);
-
+    await renderPage('../views/article.hbs', data);
 };
