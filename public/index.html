@@ -31,7 +31,11 @@
         });
 
         $(function () {
-            renderApp();
+            getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles")
+                .then( v => {
+                    data = v;
+                    renderApp();
+            });
         });
     </script>
 </body>

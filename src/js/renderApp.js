@@ -1,6 +1,6 @@
 async function renderApp() {
     const params = new URLSearchParams(location.search);
-    let dat = await getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles");
+    let dat = data;
 
     if (params.get('q')) {
         dat = dat.filter((item) => item.nombre.toLocaleLowerCase().includes(params.get('q').toLocaleLowerCase()));
@@ -22,6 +22,13 @@ async function renderApp() {
     };
 
     await renderPage('../src/views/app.hbs', dat, () => {
+        $('.article-list .article').each((_, item) => {
+            $(item).on('click', () => {
+                console.log("Click in article n:" + item.dataset.id);
+                navigate(`/article?=${item.dataset.id}`);
+            });
+        });
+        
         $("#search").on("submit", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val();
