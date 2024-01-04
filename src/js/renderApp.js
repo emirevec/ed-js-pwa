@@ -1,4 +1,4 @@
-function renderApp() {
+async function renderApp() {
     const params = new URLSearchParams(location.search);
     let dat = data;
 
@@ -21,7 +21,7 @@ function renderApp() {
         };
     };
 
-    renderPage('../src/views/app.hbs', dat, () => {
+    await renderPage('../src/views/app.hbs', dat, () => {
         $("#search").on("submit", (e) => {
             e.preventDefault();
             const searchName = $("#search_name").val();
