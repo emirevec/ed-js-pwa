@@ -1,15 +1,6 @@
-function renderPage(url, data, callback){
-    $.ajax({
-        url: url,
-        method: 'GET',
-        dataType: 'html'
-        })
-        .done(function(response){
-            const template = Handlebars.compile(response);
-            $("#app").empty();
-            $("#app").append(template({ data }));
-            callback();
-    });
+async function renderPage (url, data, callback){
+    const responseObject = await fetch(url);
+    const response = await responseObject.text();
+    $("#app").html(Handlebars.compile(response)({ data }));
+    callback();
 };
-
-
