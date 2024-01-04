@@ -1,6 +1,6 @@
-async function renderPage (url, data, callback){
+async function renderPage (url, id, data, callback){
     const responseObject = await fetch(url);
     const response = await responseObject.text();
-    $("#app").html(Handlebars.compile(response)({ data }));
+    $("#"+id).html(Handlebars.compile(response)({ data }));
     callback();
 };
