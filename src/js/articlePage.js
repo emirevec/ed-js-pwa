@@ -6,8 +6,9 @@ async function articlePage (){
         return;
     }
 
-    const data = data.find((item) => item.id == search.get('id'));
+    const data = await getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles/"+search.get('id'));
 
-    renderPage('../views/article.hbs', data);
-
+    await renderPage('../src/views/article.hbs', "article", {data}, () => {
+        return;
+    });
 };
