@@ -1,6 +1,6 @@
 async function renderApp() {
     const params = new URLSearchParams(location.search);
-    let dat = data;
+    let dat = await getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles");
 
     if (params.get('q')) {
         dat = dat.filter((item) => item.nombre.toLocaleLowerCase().includes(params.get('q').toLocaleLowerCase()));
