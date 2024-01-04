@@ -1,4 +1,4 @@
-function navigate (to) {
+async function navigate (to) {
     history.pushState({},'',to);
     return routes[location.pathname]();
 };
