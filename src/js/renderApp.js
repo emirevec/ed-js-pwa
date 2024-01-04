@@ -25,7 +25,7 @@ async function renderApp() {
         $('.article-list .article').each((_, item) => {
             $(item).on('click', () => {
                 console.log("Click in article n:" + item.dataset.id);
-                navigate(`/article?=${item.dataset.id}`);
+                navigate(`/article?id=${item.dataset.id}`);
             });
         });
         
