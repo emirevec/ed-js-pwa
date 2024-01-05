@@ -14,7 +14,6 @@ async function articlePage (){
         });
         
         $("#article_submit").on('click', () => {
-            console.log('Click article_submit');
             navigate(`/cart`);
         });
     });
