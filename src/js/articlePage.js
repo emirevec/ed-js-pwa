@@ -11,6 +11,11 @@ async function articlePage (){
     await renderPage('../src/views/article.hbs', "article", {data}, () => {
         $("#article_close").on('click', () => {
             $("#article").empty();
-        });        
+        });
+        
+        $("#article_submit").on('click', () => {
+            console.log('Click article_submit');
+            navigate(`/cart`);
+        });
     });
 };
