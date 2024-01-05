@@ -20,12 +20,14 @@
     <script src="../src/js/renderApp.js"></script>
     <script src="../src/js/navigate.js"></script>
     <script src="../src/js/articlePage.js"></script>
+    <script src="../src/js/cartPage.js"></script>
     <script src="../src/js/getData.js"></script>
+    
     <script>
         const routes = {
             '/': renderApp,
             '/article': articlePage,
-            //'/cart': cart, 
+            '/cart': cartPage,
         };
 
         $(window).on('popstate', () => {
