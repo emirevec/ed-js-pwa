@@ -9,6 +9,8 @@ async function articlePage (){
     const data = await getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles/"+search.get('id'));
 
     await renderPage('../src/views/article.hbs', "article", {data}, () => {
-        return;
+        $("#article_close").on('click', () => {
+            $("#article").empty();
+        });        
     });
 };
