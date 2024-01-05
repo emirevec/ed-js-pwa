@@ -1,6 +1,6 @@
 async function renderApp() {
     const params = new URLSearchParams(location.search);
-    let dat = data;
+    let dat = cart.catalogue;
 
     if (params.get('q')) {
         dat = dat.filter((item) => item.nombre.toLocaleLowerCase().includes(params.get('q').toLocaleLowerCase()));

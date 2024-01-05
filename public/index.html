@@ -22,6 +22,7 @@
     <script src="../src/js/articlePage.js"></script>
     <script src="../src/js/cartPage.js"></script>
     <script src="../src/js/getData.js"></script>
+    <script src="../src/js/cart.js"></script>
     
     <script>
         const routes = {
@@ -37,7 +38,7 @@
         $(function () {
             getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles")
                 .then( v => {
-                    data = v;
+                    cart.catalogue = v;
                     renderApp();
             });
         });
