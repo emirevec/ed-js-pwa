@@ -14,6 +14,7 @@ async function articlePage (){
         });
         
         $("#article_submit").on('click', () => {
+            cart.add();
             navigate(`/cart`);
         });
     });
