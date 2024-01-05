@@ -16,6 +16,10 @@ async function articlePage (){
         $("#article_submit").on('click', () => {
             cart.add();
             navigate(`/cart`);
+            setTimeout(() => { 
+                $("#cart_slide").removeClass("translate-x-full").addClass("translate-x-0");
+                $("#cart_opacity").removeClass("opacity-0").addClass("opacity-100");
+            }, 250);
         });
     });
 };
