@@ -34,5 +34,9 @@ async function renderApp() {
             const searchOrder = $("#search_order").val();
             navigate(`/?q=${searchName}&s=${searchOrder}`);
         });
+
+        $("#article_submit").on('clik', () => {
+            navigate(`/cart`);
+        });
     });
 };
