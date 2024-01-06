@@ -14,7 +14,7 @@ async function articlePage (){
         });
         
         $("#article_submit").on('click', () => {
-            cart.add();
+            cart.add(search.get('id'));
             navigate(`/cart`);
             setTimeout(() => { 
                 $("#cart_slide").removeClass("translate-x-full").addClass("translate-x-0");
