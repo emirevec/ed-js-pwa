@@ -5,6 +5,7 @@ async function cartPage (){
             $("#cart_slide").removeClass("translate-x-0").addClass("translate-x-full");
             $("#cart_opacity").removeClass("opacity-100").addClass("opacity-0");
             setTimeout(() => {$("#cart").empty()}, 250);
+            navigate('/')
         });
     });
 };
