@@ -37,10 +37,14 @@ const cart = {
             return {
                 ...itCatalogue,
                 ...it,
-                ...{total: itCatalogue.precio * 4}
+                ...{total: itCatalogue.precio * it.count}
             };
         });
     },
+
+    total(){
+        return this.json().reduce((prev, curr) => prev + curr.total , 0);
+    }
 
     
 };

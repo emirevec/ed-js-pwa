@@ -45,11 +45,11 @@
                             <div class="mt-8">
                                 <div class="flow-root">
                                     <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                        {{#each data}}
+                                        {{#each items}}
                                         <li class="flex py-6">
                                             <div
                                                 class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <img src="{{this.urlImagen}}"
+                                                <img src="{{urlImagen}}"
                                                     alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
                                                     class="h-full w-full object-cover object-center">
                                             </div>
@@ -59,11 +59,11 @@
                                                     <div
                                                         class="flex justify-between text-base font-medium text-gray-900">
                                                         <h3>
-                                                            <a href="#">{{this.descripcion}}</a>
+                                                            <a href="#">{{descripcion}}</a>
                                                         </h3>
                                                         <p class="ml-4"> {{this.precio}} </p>
                                                     </div>
-                                                    <p class="mt-1 text-sm text-gray-500"> {{this.id}} </p>
+                                                    <p class="mt-1 text-sm text-gray-500"> SKU: {{this.id}} </p>
                                                 </div>
                                                 <div class="flex flex-1 items-end justify-between text-sm">
                                                     <p class="text-gray-500">Qty {{this.count}} </p>
@@ -85,7 +85,7 @@
                         <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
                             <div class="flex justify-between text-base font-medium text-gray-900">
                                 <p>Subtotal</p>
-                                <p>$262.00</p>
+                                <p>$ {{ total }} </p>
                             </div>
                             <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                             <div class="mt-6">

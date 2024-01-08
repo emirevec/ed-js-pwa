@@ -1,5 +1,9 @@
 async function cartPage (){
-    const data = cart.json();
+    const data = {
+        items: cart.json(),
+        total: cart.total()
+    }
+    console.log(data);
     await renderPage('../src/views/cart.hbs', "cart", data, () => {
         $("#cart_close").on('click', () => {
             $("#cart_slide").removeClass("translate-x-0").addClass("translate-x-full");

@@ -21,7 +21,7 @@ async function renderApp() {
         };
     };
 
-    await renderPage('../src/views/app.hbs', "app" , dat, () => {
+    await renderPage('../src/views/app.hbs', "app" , { items: dat }, () => {
         $('.article-list .article').each((_, item) => {
             $(item).on('click', () => {
                 navigate(`/article?id=${item.dataset.id}`);
