@@ -63,13 +63,14 @@
                                                         </h3>
                                                         <p class="ml-4"> {{this.precio}} </p>
                                                     </div>
-                                                    <p class="mt-1 text-sm text-gray-500"> SKU: {{this.id}} </p>
+                                                    <p class="mt-1 text-sm text-gray-500"> SKU:</p>
+                                                    <p id="cart_id" class="mt-1 text-sm text-gray-500"> {{this.id}} </p>
                                                 </div>
                                                 <div class="flex flex-1 items-end justify-between text-sm">
                                                     <p class="text-gray-500">Qty {{this.count}} </p>
 
                                                     <div class="flex">
-                                                        <button type="button"
+                                                        <button id="cart_remove" type="button"
                                                             class="font-medium text-green-600 hover:text-green-500">Remove</button>
                                                     </div>
                                                 </div>

@@ -25,10 +25,39 @@ const cart = {
         this.items = currentCart
     },
 
-    /* add listo.
-    increase
-    remove 
-    decrease */
+    increase(id) {
+        this.items = this.items.map((it) => {
+            if(id == it.id) {
+                return {
+                    ...it,
+                    count: it.count + 1
+                }
+            } else {
+                return it
+            }
+        })
+    },
+
+    decrease(id) {
+        this.items = this.items
+            .map((it) => {
+                if(id == it.id) {
+                    return {
+                        ...it,
+                        count: it.count - 1
+                    }
+                } else {
+                    return it
+                }
+            })
+            .filter((it) => it.count > 0 );
+    },
+
+    remove(id) {
+        console.log(id);
+        this.items = this.items.filter((it) => it.id != id);
+        console.log(this.items);
+    },
 
     json(){
         return this.items.map((it) => {
