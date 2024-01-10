@@ -10,6 +10,10 @@ self.addEventListener('install', (e) => {
         return cache.addAll([
             './public/index.html',
             './public/index.css',
+            './src/views/app.hbs',
+            './src/views/article.hbs',
+            './src/views/cart.hbs',
+            './sw.js'
         ]);
     });
 
@@ -44,26 +48,30 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
     console.log("Sw fetchs");
+    
     if (CACHE_YES) {
-        
         let {url, method} = e.request
-
-        const response = caches.match(e.request).then((res) => {
-            if (res) {
-                return res;
-            }
-
-            return fetch(e.response).then((newResponse) => {
-                caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
-                    cache.put(e.request, newResponse)
+        
+        if (method === 'GET' && !url.includes('mockapi.io')) {
+            
+            const response = caches.match(e.request).then((res) => {
+                if (res) {
+                    return res;
+                }
+    
+                return fetch(e.response).then((newResponse) => {
+                    caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
+                        cache.put(e.request, newResponse)
+                    });
+                    return newResponse.clone();
                 });
-                return newResponse.clone();
             });
-        });
+    
+            e.respondWith(response);
+        };
 
-        e.respondWhit(response);
     }else {
-        console.log("Bypass", method, url);
+        console.warn("Bypass", method, url);
     };
 });
 
