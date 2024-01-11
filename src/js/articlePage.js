@@ -1,4 +1,9 @@
-async function articlePage (){
+import { navigate } from './navigate.js';
+import { getData } from './getData.js';
+import { renderPage } from './renderPage.js';
+import { cart } from './cart.js';
+
+export default async function articlePage(){
     const search = new URLSearchParams(location.search);
 
     if (search.get('id') == null) {

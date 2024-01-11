@@ -5,46 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#166534"/>
     <link rel="stylesheet" href="index.css">
     <title>Tienda Virtual</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <link rel="manifest" href="./manifest.json">
 </head>
 
 <body class="flex flex-col justify-center items-center gap-1 bg-green-50 dark:bg-green-950">
     <div id="app" class="flex flex-col justify-center items-center gap-1"></div>
     <div id="article"></div>
     <div id="cart"></div>
-    <script src="../src/js/renderPage.js"></script>
-    <script src="../src/js/renderApp.js"></script>
-    <script src="../src/js/navigate.js"></script>
-    <script src="../src/js/articlePage.js"></script>
-    <script src="../src/js/cartPage.js"></script>
-    <script src="../src/js/getData.js"></script>
-    <script src="../src/js/cart.js"></script>
-    <script src="../src/js/index.js"></script>
-
-    <script>
-        const routes = {
-            '/': renderApp,
-            '/article': articlePage,
-            '/cart': cartPage,
-        };
-
-        $(window).on('popstate', () => {
-            navigate(location.pathname)
-        });
-
-        $(function () {
-            getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles")
-                .then(v => {
-                    cart.catalogue = v;
-                    renderApp();
-                });
-            registrarServiceWorker()
-        });
-    </script>
+    <script type="module" src="../src/js/index.js"></script>
 </body>
 
 </html>
