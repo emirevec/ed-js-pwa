@@ -13,7 +13,7 @@ self.addEventListener('install', (e) => {
             './src/views/app.hbs',
             './src/views/article.hbs',
             './src/views/cart.hbs',
-            './sw.js'
+            './src/js/index.js'
         ]);
     });
 
@@ -59,7 +59,7 @@ self.addEventListener('fetch', (e) => {
                     return res;
                 }
     
-                return fetch(e.response).then((newResponse) => {
+                return fetch(e.request).then((newResponse) => {
                     caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
                         cache.put(e.request, newResponse)
                     });
