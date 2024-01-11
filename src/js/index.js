@@ -23,7 +23,9 @@ function registrarServiceWorker() {
 };
 
 $(function () {
-    registrarServiceWorker();
+    if(window.caches) {
+        registrarServiceWorker();
+    };
 
     getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles")
         .then(v => {
