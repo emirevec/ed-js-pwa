@@ -13,7 +13,16 @@ self.addEventListener('install', (e) => {
             './src/views/app.hbs',
             './src/views/article.hbs',
             './src/views/cart.hbs',
-            './src/js/index.js'
+            './src/js/articlePage.js',
+            './src/js/cachedData.js',
+            './src/js/cart.js',
+            './src/js/cartPage.js',
+            './src/js/getData.js',
+            './src/js/index.js',
+            './src/js/navigate.js',
+            './src/js/renderApp.js',
+            './src/js/renderPage.js',
+            './src/js/routes.js'
         ]);
     });
 
