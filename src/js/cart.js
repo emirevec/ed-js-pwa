@@ -1,6 +1,7 @@
-const cart = {
-    catalogue: [],
+export const cart = {
     items: [],
+
+    catalogue: [],
 
     add(newId) {
         let currentCart = this.items;

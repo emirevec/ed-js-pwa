@@ -1,4 +1,8 @@
-async function renderApp() {
+import { renderPage } from './renderPage.js';
+import { navigate } from './navigate.js';
+import { cart } from './cart.js';
+
+export async function renderApp() {
     const params = new URLSearchParams(location.search);
     let dat = cart.catalogue;
 
