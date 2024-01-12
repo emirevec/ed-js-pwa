@@ -1,7 +1,7 @@
-import getCachedData from "./getCachedData.js";
+import cachedData from "./cachedData.js";
 
 export async function getData(url){
-    const response = await getCachedData(url);
+    const response = await cachedData(url);
     let data = await JSON.parse(response);
     return data;
 };
