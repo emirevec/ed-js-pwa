@@ -25,8 +25,10 @@ function registrarServiceWorker() {
 $(function () {
     if(window.caches) {
         registrarServiceWorker();
+    }else{ 
+        console.warn("Bypass", method, url);
     };
-
+    
     getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles")
         .then(v => {
             cart.catalogue = v;

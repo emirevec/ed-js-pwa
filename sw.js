@@ -2,14 +2,13 @@ const CACHE_STATIC_NAME = "static-v01"
 const CACHE_INMUTABLE_NAME = "inmutable-v01"
 const CACHE_DYNAMIC_NAME = "dynamic-V01"
 
-const CACHE_YES = true;
-
 self.addEventListener('install', (e) => {
     console.log("Sw install");
     const cacheStatic = caches.open(CACHE_STATIC_NAME).then( (cache) => {
         return cache.addAll([
             './public/index.html',
             './public/index.css',
+            './public/manifest.json',
             './src/views/app.hbs',
             './src/views/article.hbs',
             './src/views/cart.hbs',
@@ -57,30 +56,24 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
     console.log("Sw fetchs");
-    
-    if (CACHE_YES) {
-        let {url, method} = e.request
-        
-        if (method === 'GET' && !url.includes('mockapi.io')) {
-            
-            const response = caches.match(e.request).then((res) => {
-                if (res) {
-                    return res;
-                }
-    
-                return fetch(e.request).then((newResponse) => {
-                    caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
-                        cache.put(e.request, newResponse)
-                    });
-                    return newResponse.clone();
-                });
-            });
-    
-            e.respondWith(response);
-        };
 
-    }else {
-        console.warn("Bypass", method, url);
+    let {url, method} = e.request
+    
+    if (method === 'GET' && !url.includes('mockapi.io')) {        
+        const response = caches.match(e.request).then((res) => {
+            if (res) {
+                return res;
+            };
+
+            return fetch(e.request).then((newResponse) => {
+                caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
+                    cache.put(e.request, newResponse)
+                });
+                return newResponse.clone();
+            });
+        });
+
+        e.respondWith(response);
     };
 });
 
