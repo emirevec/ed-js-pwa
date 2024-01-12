@@ -77,4 +77,17 @@ self.addEventListener('fetch', (e) => {
     };
 });
 
+self.addEventListener('push', (e) => {
+    const title = "Tienda virtual";
+    const options = {
+        body: `Mensaje: ${e.data.text()}`,
+        icon: './src/images/icons/icon-72x72.png'
+    };
 
+    e.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', (e) => {
+    e.notification.close();
+    e.waitUntil(clients.openWindow('https://www.google.com'))
+})

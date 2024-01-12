@@ -12,6 +12,13 @@ function registrarServiceWorker() {
         navigator.serviceWorker.register('../../sw.js')
             .then(reg => {
                 console.log("El sw se registró.", reg);
+
+                Notification.requestPermission((res) => {
+                    if ( res === 'granted') {
+                        navigator.serviceWorker.ready.then((res) => {
+                        })
+                    }
+                });
             })
             .catch(err => {
                 console.log("Error al registrar sw.", err)
