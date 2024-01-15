@@ -1,6 +1,7 @@
 import { renderPage } from './renderPage.js';
 import { navigate } from './navigate.js';
 import { cart } from './cart.js';
+import { unsubscribeUser, subscribeUser, isSubscribed, pushButton } from './push.js';
 
 export async function renderApp() {
     const params = new URLSearchParams(location.search);
@@ -38,5 +39,15 @@ export async function renderApp() {
             const searchOrder = $("#search_order").val();
             navigate(`/?q=${searchName}&s=${searchOrder}`);
         });
+
+        $("#push_btn").on('click', function () {
+            console.log('pushBtn');
+            $("#push_btn").prop('disabled', true);
+            if (isSubscribed) {
+                unsubscribeUser();
+            } else {
+                subscribeUser();
+            }
+            });
     });
 };

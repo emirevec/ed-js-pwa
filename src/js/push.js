@@ -4,6 +4,8 @@ let pushButton = null;
 let isSubscribed = false;
 let swRegistration = null;
 
+export {isSubscribed, pushButton};
+
 export function urlB64ToUint8Array(base64String) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
     const base64 = (base64String + padding)
@@ -19,7 +21,6 @@ export function urlB64ToUint8Array(base64String) {
 
     return outputArray;
 }
-
 
 export function updateBtn() {
     if (isSubscribed) {
@@ -89,16 +90,6 @@ export function unsubscribeUser() {
 
 export function initialiseUI(reg) {
     swRegistration = reg
-    pushButton = $("#push_btn");
-    pushButton.on('click', function () {
-    console.log('pushBtn');
-    pushButton.prop('disabled', true);
-    if (isSubscribed) {
-        unsubscribeUser();
-    } else {
-        subscribeUser();
-    }
-    });
 
     swRegistration.pushManager.getSubscription()
         .then(function (subscription) {
