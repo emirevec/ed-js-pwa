@@ -1,10 +1,10 @@
-const applicationServerPublicKey = 'BOtgEWpiFRTDGRiIFOsmdV2FE5bcxoobxTRji_254Wi-iGYnKxeDXs_Vylm45woIf3gBW0E32-EevHAQhhi5JC4'
+const applicationServerPublicKey = 'BBBc0X3o_OWgpmIGQBmIiE7SCjVt840HXLqBELnA9Xs61xWY9_7zls9MTMlowuT6B_nFhgfC08ExdYLwNyCzu0Y'
 
 let pushButton = null;
 let isSubscribed = false;
 let swRegistration = null;
 
-function urlB64ToUint8Array(base64String) {
+export function urlB64ToUint8Array(base64String) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
     const base64 = (base64String + padding)
         .replace(/\-/g, '+')
@@ -21,7 +21,7 @@ function urlB64ToUint8Array(base64String) {
 }
 
 
-function updateBtn() {
+export function updateBtn() {
     if (isSubscribed) {
         pushButton.textContent = 'DesHabilitar Notificaciones Push';
     } else {
@@ -31,7 +31,7 @@ function updateBtn() {
     pushButton.disabled = false;
 }
 
-function updateSubscriptionOnServer(subscription) {
+export function updateSubscriptionOnServer(subscription) {
     const subscriptionJson = document.querySelector('.js-subscription-json');
     const subscriptionDetails =
         document.querySelector('.js-subscription-details');
@@ -45,7 +45,7 @@ function updateSubscriptionOnServer(subscription) {
 }
 
 
-function subscribeUser() {
+export function subscribeUser() {
     const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
     swRegistration.pushManager.subscribe({
         userVisibleOnly: true,
@@ -67,7 +67,7 @@ function subscribeUser() {
 }
 
 
-function unsubscribeUser() {
+export function unsubscribeUser() {
     swRegistration.pushManager.getSubscription()
         .then(function (subscription) {
             if (subscription) {
@@ -87,8 +87,7 @@ function unsubscribeUser() {
         });
 }
 
-
-function initialiseUI(reg) {
+export function initialiseUI(reg) {
     swRegistration = reg
     pushButton = document.querySelector('.js-push-btn');
 

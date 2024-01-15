@@ -2,6 +2,14 @@ import { navigate } from './navigate.js';
 import { getData } from './getData.js';
 import { renderApp } from './renderApp.js';
 import { cart } from './cart.js'
+import { 
+    initialiseUI, 
+    urlB64ToUint8Array, 
+    updateBtn, 
+    updateSubscriptionOnServer,
+    subscribeUser,
+    unsubscribeUser
+} from './push.js';
 
 $(window).on('popstate', () => {
     navigate(location.pathname)
@@ -12,6 +20,8 @@ function registrarServiceWorker() {
         navigator.serviceWorker.register('../../sw.js')
             .then(reg => {
                 console.log("El sw se registró.", reg);
+                
+                initialiseUI(reg);
 
                 Notification.requestPermission((res) => {
                     if ( res === 'granted') {
