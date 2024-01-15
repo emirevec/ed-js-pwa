@@ -6,7 +6,6 @@ import {
     initialiseUI, 
     urlB64ToUint8Array, 
     updateBtn, 
-    updateSubscriptionOnServer,
     subscribeUser,
     unsubscribeUser
 } from './push.js';

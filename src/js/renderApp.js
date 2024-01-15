@@ -1,7 +1,7 @@
 import { renderPage } from './renderPage.js';
 import { navigate } from './navigate.js';
 import { cart } from './cart.js';
-import { unsubscribeUser, subscribeUser, isSubscribed, pushButton } from './push.js';
+import { unsubscribeUser, subscribeUser, isSubscribed } from './push.js';
 
 export async function renderApp() {
     const params = new URLSearchParams(location.search);
@@ -41,8 +41,8 @@ export async function renderApp() {
         });
 
         $("#push_btn").on('click', function () {
-            console.log('pushBtn');
-            $("#push_btn").prop('disabled', true);
+            console.log('clik en button pushBtn');
+            //$("#push_btn").prop('disabled', true);
             if (isSubscribed) {
                 unsubscribeUser();
             } else {

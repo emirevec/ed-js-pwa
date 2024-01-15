@@ -1,10 +1,9 @@
 const applicationServerPublicKey = 'BBBc0X3o_OWgpmIGQBmIiE7SCjVt840HXLqBELnA9Xs61xWY9_7zls9MTMlowuT6B_nFhgfC08ExdYLwNyCzu0Y'
 
-let pushButton = null;
 let isSubscribed = false;
 let swRegistration = null;
 
-export {isSubscribed, pushButton};
+export { isSubscribed };
 
 export function urlB64ToUint8Array(base64String) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -23,19 +22,23 @@ export function urlB64ToUint8Array(base64String) {
 }
 
 export function updateBtn() {
-    if (isSubscribed) {
-        pushButton.textContent = 'DesHabilitar Notificaciones Push';
-    } else {
-        pushButton.textContent = 'Habilitar Notificaciones Push';
-    }
+    console.log("Se ejecutó updateBtn");
+    let pushBtn = $("#push_btn");
 
-    pushButton.disabled = false;
+    if (isSubscribed) {
+        console.log("Y leyó ok el isSubscribed como true");
+        pushBtn.text("Turn push notifications off");
+    } else {
+        console.log("Y leyó ok el isSubscribed como false");
+        pushBtn.text("Turn push notifications on");
+    };
+
+    pushBtn.prop('disabled', false);
 }
 
-export function updateSubscriptionOnServer(subscription) {
+/* export function updateSubscriptionOnServer(subscription) {
     const subscriptionJson = document.querySelector('.js-subscription-json');
-    const subscriptionDetails =
-        document.querySelector('.js-subscription-details');
+    const subscriptionDetails = document.querySelector('.js-subscription-details');
 
     if (subscription) {
         subscriptionJson.textContent = JSON.stringify(subscription);
@@ -43,8 +46,7 @@ export function updateSubscriptionOnServer(subscription) {
     } else {
         subscriptionDetails.classList.add('is-invisible');
     }
-}
-
+} */
 
 export function subscribeUser() {
     const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
@@ -55,7 +57,7 @@ export function subscribeUser() {
         .then(function (subscription) {
             console.log('User is subscribed:', subscription);
 
-            updateSubscriptionOnServer(subscription);
+            //updateSubscriptionOnServer(subscription);
 
             isSubscribed = true;
 
@@ -67,30 +69,33 @@ export function subscribeUser() {
         });
 }
 
-
 export function unsubscribeUser() {
     swRegistration.pushManager.getSubscription()
         .then(function (subscription) {
             if (subscription) {
+                console.log('User is unsubscribed.');
+                isSubscribed = false;
+
+                updateBtn()
+                
                 return subscription.unsubscribe();
             }
         })
         .catch(function (error) {
             console.log('Error unsubscribing', error);
         })
-        .then(function () {
+        /* .then(function () {
             updateSubscriptionOnServer(null);
 
             console.log('User is unsubscribed.');
             isSubscribed = false;
 
             updateBtn();
-        });
+        }) */;
 }
 
 export function initialiseUI(reg) {
     swRegistration = reg
-
     swRegistration.pushManager.getSubscription()
         .then(function (subscription) {
             isSubscribed = !(subscription === null);
