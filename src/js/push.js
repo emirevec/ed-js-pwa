@@ -90,14 +90,14 @@ export function unsubscribeUser() {
 export function initialiseUI(reg) {
     swRegistration = reg
     pushButton = $("#push_btn");
-    console.log(pushButton);
     pushButton.on('click', function () {
-        pushButton.disabled = true;
-        if (isSubscribed) {
-            unsubscribeUser();
-        } else {
-            subscribeUser();
-        }
+    console.log('pushBtn');
+    pushButton.prop('disabled', true);
+    if (isSubscribed) {
+        unsubscribeUser();
+    } else {
+        subscribeUser();
+    }
     });
 
     swRegistration.pushManager.getSubscription()
