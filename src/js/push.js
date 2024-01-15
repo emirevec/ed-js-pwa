@@ -89,9 +89,9 @@ export function unsubscribeUser() {
 
 export function initialiseUI(reg) {
     swRegistration = reg
-    pushButton = document.querySelector('.js-push-btn');
-
-    pushButton.addEventListener('click', function () {
+    pushButton = $("#push_btn");
+    console.log(pushButton);
+    pushButton.on('click', function () {
         pushButton.disabled = true;
         if (isSubscribed) {
             unsubscribeUser();
@@ -112,4 +112,4 @@ export function initialiseUI(reg) {
 
             updateBtn();
         });
-}
+};
