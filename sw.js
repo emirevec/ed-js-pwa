@@ -21,8 +21,7 @@ self.addEventListener('install', (e) => {
             './src/js/navigate.js',
             './src/js/renderApp.js',
             './src/js/renderPage.js',
-            './src/js/routes.js',
-            './src/js/push.js'
+            './src/js/routes.js'
         ]);
     });
 
