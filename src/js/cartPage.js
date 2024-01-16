@@ -13,5 +13,20 @@ export default async function cartPage (){
             setTimeout(() => {$("#cart").empty()}, 250);
             navigate('/')
         });
+
+        $(".cart_remove_id").on('click', (e)=> {
+            console.log(e.target.id);
+            console.log(cart.json());
+
+            if (cart.json().length == 1) {
+                cart.remove(e.target.id);
+                $("#cart_slide").removeClass("translate-x-0").addClass("translate-x-full");
+                $("#cart_opacity").removeClass("opacity-100").addClass("opacity-0");
+                setTimeout(() => {$("#cart").empty()}, 250);
+                navigate('/');
+            }else{
+                $(`#${e.target.id}`).closest("#cart_li").remove();
+            };
+        });
     });
 };
