@@ -22,7 +22,12 @@ export default async function cartPage (){
                 setTimeout(() => {$("#cart").empty()}, 250);
                 navigate('/');
             }else{
-                $(`#${e.target.id}`).closest(".cart_li").remove();
+                cart.remove(e.target.id);
+                navigate('/cart');
+                setTimeout(() => { 
+                    $("#cart_slide").removeClass("translate-x-full").addClass("translate-x-0");
+                    $("#cart_opacity").removeClass("opacity-0").addClass("opacity-100");
+                }, 250);
             };
         });
         
