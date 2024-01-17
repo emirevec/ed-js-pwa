@@ -73,7 +73,6 @@ function initialiseUI(reg) {
     swRegistration = reg
     setTimeout(()=>{
         $("#push_btn").on('click', () => {
-            console.log("Click en pushBtn");
             $("#push_btn").prop("disable", true);
             if (isSubscribed) {
                 unsubscribeUser();
@@ -128,7 +127,6 @@ $(window).on('popstate', () => {
 });
 
 $(function () {
-    
     getData("https://6596bb636bb4ec36ca033d52.mockapi.io/articles")
     .then(v => {
         cart.catalogue = v;

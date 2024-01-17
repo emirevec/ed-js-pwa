@@ -1,6 +1,6 @@
 <header class="flex flex-col items-center">
-    <h1 class="text-2xl font-bold text-green-800 dark:text-green-200">TIENDA VIRTUAL</h1>
-    <p class="text-xl font-normal text-green-700 dark:text-green-300">Bienvenidos!!!</p>
+    <h1 class="text-2xl font-bold text-green-800 dark:text-green-200">VIRTUAL STORE</h1>
+    <p class="text-xl font-normal text-green-700 dark:text-green-300">Welcome!!!</p>
     <button id="push_btn" class="bg-green-700 dark:bg-green-300 hover:bg-green-400 text-white dark:text-green-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Turn push notifications on</button>
 </header>
 <main class="flex flex-col items-center">
@@ -8,9 +8,8 @@
         <form id="search"
             class="w-full max-w-xs bg-white dark:bg-green-800 shadow-md dark:shadow-green-500 rounded px-8 pt-6 pb-8 mb-4"
             action="">
-            <p class="text-green-700 dark:text-green-200">Buscar:</p>
-            <label class="block text-green-800 dark:text-green-100 text-sm font-bold mb-2" for="search_name">Por
-                nombre:</label>
+            <p class="text-green-700 dark:text-green-200">Search:</p>
+            <label class="block text-green-800 dark:text-green-100 text-sm font-bold mb-2" for="search_name">By name:</label>
             <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
                 id="search_name" type="text">
@@ -19,18 +18,18 @@
                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline mb-4"
                 name="price">
                 <option value="nada">-</option>
-                <option value="mayorPrecio">Mayor precio</option>
-                <option value="menorPrecio">Menor precio</option>
+                <option value="higherPrice">Higher Price</option>
+                <option value="lowerPrice">Lower Price</option>
             </select>
             <button id="search_submit"
-                class="bg-green-700 dark:bg-green-300 hover:bg-green-400 text-white dark:text-green-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Buscar</button>
+                class="bg-green-700 dark:bg-green-300 hover:bg-green-400 text-white dark:text-green-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Search</button>
         </form>
     </section>
     <section>
         <div
             class="w-full max-w-xs sm:max-w-xl lg:max-w-5xl xl:max-w-7xl bg-white dark:bg-green-800 shadow-md dark:shadow-green-500  rounded px-2 mb-4">
             <div class="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:pt-2 lg:max-w-7xl lg:px-8">
-                <h2 class="text-2xl text-green-800 dark:text-green-200 font-bold tracking-tight ">Listado de productos
+                <h2 class="text-2xl text-green-800 dark:text-green-200 font-bold tracking-tight ">Product list
                 </h2>
                 <div
                     class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 article-list">

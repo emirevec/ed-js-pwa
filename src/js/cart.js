@@ -55,9 +55,7 @@ export const cart = {
     },
 
     remove(id) {
-        console.log(id);
         this.items = this.items.filter((it) => it.id != id);
-        console.log(this.items);
     },
 
     json(){
@@ -75,6 +73,4 @@ export const cart = {
     total(){
         return this.json().reduce((prev, curr) => prev + curr.total , 0);
     }
-
-    
 };

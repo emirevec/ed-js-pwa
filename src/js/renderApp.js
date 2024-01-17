@@ -12,12 +12,12 @@ export async function renderApp() {
 
     if (params.get('s')) {
         switch (params.get('s')) {
-            case 'mayorPrecio':
+            case 'higherPrice':
                 dat = dat.sort((a, b) =>
                     Number(a.precio) < Number(b.precio) ? 1 : -1
                 )
                 break;
-            case 'menorPrecio':
+            case 'lowerPrice':
                 dat = dat.sort((a, b) =>
                     Number(a.precio) > Number(b.precio) ? 1 : -1
                 )
