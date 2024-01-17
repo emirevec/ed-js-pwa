@@ -69,13 +69,16 @@
                                                     <p class="mt-1 text-sm text-gray-500"> SKU:</p>
                                                     <p id="cart_id" class="mt-1 text-sm text-gray-500"> {{this.id}} </p>
                                                 </div>
-                                                <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <p class="text-gray-500">Qty {{this.count}} </p>
+                                                <div class="flex items-center gap-1 p-2">
+                                                    <p class=" items-center text-gray-500">Qty</p>
+                                                    <button id="cart_decrease" class="rounded-md border border-gray-300 bg-white px-3 py-1  text-sm font-medium text-gray-700 hover:bg-gray-50">-</button>
+                                                    <p class=" items-center text-gray-500">1</p>
+                                                    <button id="cart_increase" class="rounded-md border border-gray-300 bg-white px-3 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50">+</button>
+                                                </div>
 
-                                                    <div class="flex">
-                                                        <button id="{{this.id}}" type="button"
-                                                            class="cart_remove_id font-medium text-green-600 hover:text-green-500">Remove</button>
-                                                    </div>
+                                                <div class="flex">
+                                                    <button id="{{this.id}}" type="button"
+                                                        class="cart_remove_id font-medium text-green-600 hover:text-green-500">Remove</button>
                                                 </div>
                                             </div>
                                         </li>
