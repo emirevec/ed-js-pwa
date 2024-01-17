@@ -49,7 +49,7 @@
                                 <div class="flow-root">
                                     <ul role="list" class="-my-6 divide-y divide-gray-200">
                                         {{#each items}}
-                                        <li id="cart_li" class="flex py-6">
+                                        <li class="cart_li flex py-6">
                                             <div
                                                 class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                 <img src="{{urlImagen}}"
@@ -67,18 +67,18 @@
                                                         <p class="ml-4"> {{this.precio}} </p>
                                                     </div>
                                                     <p class="mt-1 text-sm text-gray-500"> SKU:</p>
-                                                    <p id="cart_id" class="mt-1 text-sm text-gray-500"> {{this.id}} </p>
+                                                    <p class="cart_item_id mt-1 text-sm text-gray-500"> {{this.id}} </p>
                                                 </div>
                                                 <div class="flex items-center gap-1 p-2">
                                                     <p class=" items-center text-gray-500">Qty</p>
-                                                    <button id="cart_decrease" class="rounded-md border border-gray-300 bg-white px-3 py-1  text-sm font-medium text-gray-700 hover:bg-gray-50">-</button>
-                                                    <p class=" items-center text-gray-500">1</p>
-                                                    <button id="cart_increase" class="rounded-md border border-gray-300 bg-white px-3 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50">+</button>
+                                                    <button class="cart_decrease rounded-md border border-gray-300 bg-white px-3 py-1  text-sm font-medium text-gray-700 hover:bg-gray-50">-</button>
+                                                    <p class=" items-center text-gray-500"> {{this.count}} </p>
+                                                    <button class=" cart_increase rounded-md border border-gray-300 bg-white px-3 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50">+</button>
                                                 </div>
 
                                                 <div class="flex">
                                                     <button id="{{this.id}}" type="button"
-                                                        class="cart_remove_id font-medium text-green-600 hover:text-green-500">Remove</button>
+                                                        class="cart_remove_item font-medium text-green-600 hover:text-green-500">Remove</button>
                                                 </div>
                                             </div>
                                         </li>

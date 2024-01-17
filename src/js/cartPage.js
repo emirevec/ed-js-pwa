@@ -14,10 +14,7 @@ export default async function cartPage (){
             navigate('/')
         });
 
-        $(".cart_remove_id").on('click', (e)=> {
-            console.log(e.target.id);
-            console.log(cart.json());
-
+        $(".cart_remove_item").on('click', (e)=> {            
             if (cart.json().length == 1) {
                 cart.remove(e.target.id);
                 $("#cart_slide").removeClass("translate-x-0").addClass("translate-x-full");
@@ -25,8 +22,28 @@ export default async function cartPage (){
                 setTimeout(() => {$("#cart").empty()}, 250);
                 navigate('/');
             }else{
-                $(`#${e.target.id}`).closest("#cart_li").remove();
+                $(`#${e.target.id}`).closest(".cart_li").remove();
             };
         });
+        
+        $(".cart_increase").on('click', (e) => {
+            let id = $(e.target).closest('.cart_li').find('.cart_item_id').text().trim();
+            cart.increase(id);
+            navigate('/cart');
+            setTimeout(() => { 
+                $("#cart_slide").removeClass("translate-x-full").addClass("translate-x-0");
+                $("#cart_opacity").removeClass("opacity-0").addClass("opacity-100");
+            }, 250);
+        });
+        
+        $(".cart_decrease").on('click', (e) => {
+            let id = $(e.target).closest('.cart_li').find('.cart_item_id').text().trim();
+            cart.decrease(id);        
+            navigate('/cart');
+            setTimeout(() => { 
+                $("#cart_slide").removeClass("translate-x-full").addClass("translate-x-0");
+                $("#cart_opacity").removeClass("opacity-0").addClass("opacity-100");
+            }, 250);
+        })
     });
 };
