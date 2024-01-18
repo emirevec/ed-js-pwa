@@ -38,5 +38,11 @@ export async function renderApp() {
             const searchOrder = $("#search_order").val();
             navigate(`/?q=${searchName}&s=${searchOrder}`);
         });
+
+        $("#mobile-btn").on('click', ()=>{
+            $("#mob-btn-op").toggleClass("block hidden");
+            $("#mob-btn-cl").toggleClass("block hidden");
+            $("#menu-extend").toggleClass("block hidden");
+        });
     });
 };
