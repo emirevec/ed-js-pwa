@@ -133,10 +133,10 @@ $(function () {
         renderApp();
     });
     
-    if(window.caches) {
+    /* if(window.caches) {
         registrarServiceWorker();
     }else{ 
         console.warn("Window does not accept caches");
-    };
+    }; */
 });
     
