@@ -22,8 +22,8 @@ export default async function articlePage(){
             cart.add(search.get('id'));
             navigate(`/cart`);
             setTimeout(() => { 
-                $("#cart_slide").removeClass("translate-x-full").addClass("translate-x-0");
-                $("#cart_opacity").removeClass("opacity-0").addClass("opacity-100");
+                $("#cart_slide").toggleClass("translate-x-full translate-x-0");
+                $("#cart_opacity").toggleClass("opacity-0 opacity-100");
             }, 250);
             $("#article").empty();
         });

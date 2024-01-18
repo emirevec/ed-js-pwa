@@ -44,5 +44,13 @@ export async function renderApp() {
             $("#mob-btn-cl").toggleClass("block hidden");
             $("#menu-extend").toggleClass("block hidden");
         });
+
+        $("#nav_to_cart").on('click', ()=>{
+            navigate('/cart');
+            setTimeout(() => { 
+                $("#cart_slide").toggleClass("translate-x-full translate-x-0");
+                $("#cart_opacity").toggleClass("opacity-0 opacity-100");
+            }, 250);
+        });
     });
 };
