@@ -3,6 +3,8 @@ import { getData } from './getData.js';
 import { renderApp } from './renderApp.js';
 import { cart } from './cart.js'
 
+
+
 const applicationServerPublicKey = 'BPTljA0cWi4YHPeaj2MAI_5VPtPhhMMSLw9Z_ZG5QDKfxhFPc-8ZSvXx_B_BAjA07zE4wOpwScnIBiyfztrr2Vo'
 let isSubscribed = false;
 let swRegistration = null;
@@ -133,10 +135,10 @@ $(function () {
         renderApp();
     });
     
-    if(window.caches) {
+    /* if(window.caches) {
         registrarServiceWorker();
     }else{ 
         console.warn("Window does not accept caches");
-    };
+    }; */
 });
     

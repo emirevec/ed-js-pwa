@@ -1,7 +1,7 @@
 {
   "name": "Tienda virtual",
   "short_name": "Tienda",
-  "theme_color": "#166534",
+  "theme_color": "#4ADE80",
   "background_color": "#F0FDF4",
   "display": "standalone",
   "orientation": "",
