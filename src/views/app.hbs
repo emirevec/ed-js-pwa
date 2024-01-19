@@ -173,26 +173,26 @@
                 <h1 class="text-2xl font-bold text-green-800 dark:text-green-200">VIRTUAL STORE</h1>
                 <p class="text-xl font-normal text-green-700 dark:text-green-300">Welcome!!!</p>
             </header>
-            <section>
+            <section class="flex justify-center">
                 <form id="search"
-                    class="w-full max-w-xs bg-white dark:bg-green-800 shadow-md dark:shadow-green-500 rounded px-8 pt-6 pb-8 mb-4"
+                    class="w-full max-w-xs lg:flex lg:justify-around lg:items-center lg:max-w-7xl bg-white dark:bg-green-800 shadow-md dark:shadow-green-500 rounded px-8 pt-6 pb-8 mb-4"
                     action="">
                     <p class="text-green-700 dark:text-green-200">Search:</p>
-                    <label class="block text-green-800 dark:text-green-100 text-sm font-bold mb-2" for="search_name">By
+                    <label class="block text-green-800 dark:text-green-100 text-sm font-bold mb-2 lg:m-0 lg:max-w-56" for="search_name">By
                         name:</label>
                     <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight lg:max-w-56 focus:outline-none focus:shadow-outline mb-4 lg:m-0"
                         id="search_name" type="text">
-                    <label for="search_order"></label>
+                    <label class="text-green-800 dark:text-green-100 text-sm font-bold mb-2 lg:m-0 lg:max-w-56" for="search_order">Order:</label>
                     <select id="search_order"
-                        class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline mb-4"
+                        class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 lg:max-w-48 rounded shadow leading-tight focus:outline-none focus:shadow-outline mb-4 lg:m-0"
                         name="price">
                         <option value="nada">-</option>
                         <option value="higherPrice">Higher Price</option>
                         <option value="lowerPrice">Lower Price</option>
                     </select>
                     <button id="search_submit"
-                        class="bg-green-700 dark:bg-green-300 hover:bg-green-400 text-white dark:text-green-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Search</button>
+                        class="bg-green-700 dark:bg-green-300 hover:bg-green-400 text-white dark:text-green-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline active:outline-none active:ring-2 active:ring-green-500 active:ring-offset-2">Search</button>
                 </form>
             </section>
             <section>
