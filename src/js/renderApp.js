@@ -45,12 +45,17 @@ export async function renderApp() {
             $("#menu-extend").toggleClass("block hidden");
         });
 
-        $("#nav_to_cart").on('click', ()=>{
+        $(".nav_to_cart").on('click', ()=>{
             navigate('/cart');
             setTimeout(() => { 
                 $("#cart_slide").toggleClass("translate-x-full translate-x-0");
                 $("#cart_opacity").toggleClass("opacity-0 opacity-100");
             }, 250);
         });
+
+        $("#user_btn").on('click',()=>{
+            $("#user_menu").toggleClass("transform opacity-0 scale-95 transform opacity-100 scale-100");
+        });
+
     });
 };
