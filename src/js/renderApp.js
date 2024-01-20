@@ -57,5 +57,10 @@ export async function renderApp() {
             $("#user_menu").toggleClass("transform opacity-0 scale-95 transform opacity-100 scale-100");
         });
 
+        $(".push_btn").on('click', ()=>{
+            console.log("click en campana")
+            $(".push_btn").toggleClass("bg-green-300 bg-green-700 ring-2 ring-green-500")
+        });
+
     });
 };

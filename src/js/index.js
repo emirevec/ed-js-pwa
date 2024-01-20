@@ -27,9 +27,11 @@ function urlB64ToUint8Array(base64String) {
 
 function updateBtn() {
     if (isSubscribed) {
-        $("#push_btn").text("Turn OFF push notifications."); 
+        $("#push_st").text("Turn OFF push notifications.");
+        $("#push_btn").toggleClass("bg-gray-300 text-green-600 bg-green-700 text-green-50");
     } else {
-        $("#push_btn").text("Turn ON push notifications.");
+        $("#push_st").text("Turn ON push notifications.");
+        $("#push_btn").toggleClass("bg-gray-300 text-green-600 bg-green-700 text-green-50")
     };
 
     $("#push_btn").prop("disable", false);
