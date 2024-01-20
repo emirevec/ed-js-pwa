@@ -170,20 +170,20 @@
         <div class="mx-auto max-w-7xl mb-2 sm:px-6 lg:px-8">
             <!-- Your content -->
             <header class="bg-white shadow rounded mx-auto max-w-7xl p-4 mb-2 sm:px-6 lg:px-8">
-                <h1 class="text-2xl font-bold text-green-800 dark:text-green-200">VIRTUAL STORE</h1>
-                <p class="text-xl font-normal text-green-700 dark:text-green-300">Welcome!!!</p>
+                <h1 class="text-2xl font-bold text-green-800 ">VIRTUAL STORE</h1>
+                <p class="text-xl font-normal text-green-700 ">Welcome!!!</p>
             </header>
             <section class="flex justify-center">
                 <form id="search"
-                    class="w-full max-w-xs lg:flex lg:justify-around lg:items-center lg:max-w-7xl bg-white dark:bg-green-800 shadow-md dark:shadow-green-500 rounded px-8 pt-6 pb-8 mb-4"
+                    class="w-full max-w-xs lg:flex lg:justify-around lg:items-center lg:max-w-7xl bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
                     action="">
-                    <p class="text-green-700 dark:text-green-200">Search:</p>
-                    <label class="block text-green-800 dark:text-green-100 text-sm font-bold mb-2 lg:m-0 lg:max-w-56" for="search_name">By
+                    <p class="text-green-700">Search:</p>
+                    <label class="block text-green-800 text-sm font-bold mb-2 lg:m-0 lg:max-w-56" for="search_name">By
                         name:</label>
                     <input
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight lg:max-w-56 focus:outline-none focus:shadow-outline mb-4 lg:m-0"
                         id="search_name" type="text">
-                    <label class="text-green-800 dark:text-green-100 text-sm font-bold mb-2 lg:m-0 lg:max-w-56" for="search_order">Order:</label>
+                    <label class="text-green-800 text-sm font-bold mb-2 lg:m-0 lg:max-w-56" for="search_order">Order:</label>
                     <select id="search_order"
                         class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 lg:max-w-48 rounded shadow leading-tight focus:outline-none focus:shadow-outline mb-4 lg:m-0"
                         name="price">
@@ -192,20 +192,20 @@
                         <option value="lowerPrice">Lower Price</option>
                     </select>
                     <button id="search_submit"
-                        class="bg-green-700 dark:bg-green-300 hover:bg-green-400 text-white dark:text-green-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline active:outline-none active:ring-2 active:ring-green-500 active:ring-offset-2">Search</button>
+                        class="bg-green-700 hover:bg-green-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline active:outline-none active:ring-2 active:ring-green-500 active:ring-offset-2">Search</button>
                 </form>
             </section>
             <section>
                 <div
-                    class="w-full max-w-xs sm:max-w-xl lg:max-w-5xl xl:max-w-7xl bg-white dark:bg-green-800 shadow-md dark:shadow-green-500  rounded px-2 mb-4">
+                    class="w-full max-w-xs sm:max-w-xl lg:max-w-5xl xl:max-w-7xl bg-white shadow-md rounded px-2 mb-4">
                     <div class="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:pt-2 lg:max-w-7xl lg:px-8">
-                        <h2 class="text-2xl text-green-800 dark:text-green-200 font-bold tracking-tight ">Product list
+                        <h2 class="text-2xl text-green-800 font-bold tracking-tight ">Product list
                         </h2>
                         <div
                             class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 article-list">
                             {{#each items}}
                             <div data-id="{{this.id}}" class="group relative article">
-                                <div class="py-2 dark:bg-green-700 shadow-md dark:shadow-green-500 rounded px-2">
+                                <div class="py-2 shadow-md rounded px-2">
                                     <div
                                         class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                         <img src="{{this.urlImagen}}" alt="Front of men&#039;s Basic Tee in black."
@@ -213,16 +213,15 @@
                                     </div>
                                     <div class="mt-2 mb-4 flex justify-between py-1">
                                         <div>
-                                            <h3 class="text-sm text-green-800 dark:text-green-100">
-                                                <a href="#">
-                                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                            <h3 class="text-sm text-green-800 ">
+                                                <a href="#">true" class="absolute inset-0"></span>
                                                     {{this.nombre}}
                                                 </a>
                                             </h3>
-                                            <p class="mt-1 text-sm text-green-700 dark:text-green-100">
+                                            <p class="mt-1 text-sm text-green-700 ">
                                                 {{this.descripcion}}</p>
                                         </div>
-                                        <p class="text-sm font-bold text-green-800 dark:text-green-300">${{this.precio}}
+                                        <p class="text-sm font-bold text-green-800">${{this.precio}}
                                         </p>
                                     </div>
                                 </div>
