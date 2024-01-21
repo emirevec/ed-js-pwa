@@ -58,8 +58,7 @@ export async function renderApp() {
         });
 
         $(".push_btn").on('click', ()=>{
-            console.log("click en campana")
-            $(".push_btn").toggleClass("bg-green-300 bg-green-700 ring-2 ring-green-500")
+            $(".push_btn").toggleClass("bg-green-300 bg-green-700 ring-2 ring-green-500");
         });
 
     });

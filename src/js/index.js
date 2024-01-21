@@ -27,14 +27,12 @@ function urlB64ToUint8Array(base64String) {
 
 function updateBtn() {
     if (isSubscribed) {
-        $("#push_st").text("Turn OFF push notifications.");
-        $("#push_btn").toggleClass("bg-gray-300 text-green-600 bg-green-700 text-green-50");
+        $(".push_st").text("Turn OFF push notifications.");
     } else {
-        $("#push_st").text("Turn ON push notifications.");
-        $("#push_btn").toggleClass("bg-gray-300 text-green-600 bg-green-700 text-green-50")
+        $(".push_st").text("Turn ON push notifications.");
     };
 
-    $("#push_btn").prop("disable", false);
+    $(".push_btn").prop("disable", false);
 }
 
 function subscribeUser() {
@@ -76,8 +74,8 @@ function unsubscribeUser() {
 function initialiseUI(reg) {
     swRegistration = reg
     setTimeout(()=>{
-        $("#push_btn").on('click', () => {
-            $("#push_btn").prop("disable", true);
+        $(".push_btn").on('click', () => {
+            $(".push_btn").prop("disable", true);
             if (isSubscribed) {
                 unsubscribeUser();
             } else {
@@ -137,10 +135,10 @@ $(function () {
         renderApp();
     });
     
-    /* if(window.caches) {
+    if(window.caches) {
         registrarServiceWorker();
     }else{ 
         console.warn("Window does not accept caches");
-    }; */
+    };
 });
     
