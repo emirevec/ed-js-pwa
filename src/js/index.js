@@ -99,7 +99,7 @@ function initialiseUI(reg) {
 
 function registrarServiceWorker() {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
-        navigator.serviceWorker.register('../sw.js')
+        navigator.serviceWorker.register('../../sw.js')
             .then(reg => {
                 console.log("The sw was registered.", reg);
                 

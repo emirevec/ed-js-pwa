@@ -6,22 +6,13 @@ self.addEventListener('install', (e) => {
     console.log("Sw install");
     const cacheStatic = caches.open(CACHE_STATIC_NAME).then( (cache) => {
         return cache.addAll([
-            './public/index.html',
-            './public/index.css',
-            './public/manifest.json',
+            './index.html',
+            './index.css',
+            './manifest.json',
+            './bundle.js',
             './src/views/app.hbs',
             './src/views/article.hbs',
-            './src/views/cart.hbs',
-            './src/js/articlePage.js',
-            './src/js/cachedData.js',
-            './src/js/cart.js',
-            './src/js/cartPage.js',
-            './src/js/getData.js',
-            './src/js/index.js',
-            './src/js/navigate.js',
-            './src/js/renderApp.js',
-            './src/js/renderPage.js',
-            './src/js/routes.js'
+            './src/views/cart.hbs'
         ]);
     });
 
@@ -81,7 +72,7 @@ self.addEventListener('push', (e) => {
     const title = "Tienda virtual";
     const options = {
         body: `Mensaje: ${e.data.text()}`,
-        icon: './src/images/icons/icon-72x72.png'
+        icon: './publci/src/images/icons/icon-72x72.png'
     };
 
     e.waitUntil(self.registration.showNotification(title, options));
